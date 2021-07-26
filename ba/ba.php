@@ -24,7 +24,7 @@
 <section>
       <div class="hero-container">
          <div class="wrapper">
-         <h1>My Father's House</h1>
+         <h1>Blessed Assurance</h1>
       </div>
 </div>
 </section>
@@ -43,7 +43,7 @@
        
         <?php 
 
-$query = mysqli_query($conn,"SELECT * FROM tblresidentdata where location1 = 'MFH' and wheelchairbound = 'Yes' ORDER BY firstname ASC");
+$query = mysqli_query($conn,"SELECT * FROM tblresidentdata where location1 = 'BA' and wheelchairbound = 'Yes' ORDER BY firstname ASC");
 
 if($query->num_rows > 0){
  while ($row = mysqli_fetch_assoc($query))
@@ -55,16 +55,15 @@ if($query->num_rows > 0){
   $age = $row['age'];
   $id = $row['id'];
 
-  
+
   echo '<tr><td>'.$name.'</td><td>'.$lname.'</td><td>'.$location.'</td><td>'.$age.'</td>
   <td><a class = "navlink" href = "viewresidents.php?name='.$id.'">View</a></td><td><a class = "navlink" href ="edit.php?edit='.$id.'">Edit</a></td></tr>';
-
-
-  
+ 
  }
+}else{
+   echo "No Records in Database";
 }
   ?>
-
 
   
       </tbody>
@@ -73,13 +72,7 @@ if($query->num_rows > 0){
 
 
 <?php 
-
-    
-
- 
  $conn->close(); // Close database connection
-
-
 ?>
 
 <footer>

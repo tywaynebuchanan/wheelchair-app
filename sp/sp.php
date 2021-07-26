@@ -28,68 +28,7 @@
       </div>
 </div>
 </section>
-<!-- 
 <section class="wrapper">
-<div class="space">
-<a class = "navlink" href="index.php">Back</a>
-</div>
-</section> -->
-
-<section class="wrapper">
-   <h1>Resident Summary</h1>
-</section>
-
-<section class = "wrapper">
-   <table>
-      <thead>
-         <tr>
-         <th>Total Number of Residents</th>
-         <th>Number of Residents in WheelChair</th>
-         <th>Number of Females</th>
-         <th>Number of Males</th>
-         </tr>
-      </thead>
-      <tbody>
-
-      <?php 
-
-      
-      $totalres = mysqli_query($conn,"SELECT Count(1)FROM tblresidentdata WHERE location1 = 'SP'");
-      $row = mysqli_fetch_array($totalres);
-      $total = $row[0];
-
-      $wheelchair = mysqli_query($conn,"SELECT Count(1)FROM tblresidentdata WHERE location1 = 'SP' and wheelchairbound = 'Yes'");
-      $row1 = mysqli_fetch_array($wheelchair);
-      $wheelchairtotal = $row1[0];
-
-      $female = mysqli_query($conn,"SELECT Count(1)FROM tblresidentdata WHERE location1 = 'SP' and gender = 'Female'");
-      $row2 = mysqli_fetch_array($female);
-      $totalfemale = $row2[0];
-
-      $male = mysqli_query($conn,"SELECT Count(1)FROM tblresidentdata WHERE location1 = 'SP' and gender = 'Male'");
-      $row3 = mysqli_fetch_array($male);
-      $totalmale = $row3[0];
-
-      ?>
-
-
-      <tr>
-         <td><?php echo $total?></td>
-         <td><?php echo $wheelchairtotal?></td>
-         <td><?php echo $totalfemale?></td>
-         <td><?php echo $totalmale?></td>
-
-      </tr>
-      
-   </table>
-</section>
-  
-
-
-
-<section class="wrapper">
-
-
 <table>
       <thead>
         <tr>

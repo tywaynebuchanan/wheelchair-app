@@ -22,15 +22,7 @@
      </div>
 </nav>
 
-<!-- 
-<section>
-      <div class="hero-container">
-         <div class="wrapper">
-         <a class = "link" href="index.php"><h1><?php echo $location?></h1></a>
-      </div>
-</div>
-</section> -->
-      
+    
   
 </section>
         <?php
@@ -80,7 +72,7 @@
  <!--Single Product Detials-->
  <div class="small-container single-product">
      <div class="wrapper">
-     <a class = "navlink" href="mfh.php">Back</a>
+     <a class = "navlink" href="sp.php">Back</a>
      </div>
     <div class="row">
             <div class="col-2">

@@ -1,5 +1,4 @@
 <?php 
-
 include_once('dbconn.php');
 ?>
 <!DOCTYPE html>
@@ -18,12 +17,9 @@ include_once('dbconn.php');
            <div class="wrapper">
               <a href="index.php"><img src="images/logo.png" alt="Mustard Seed Logo"></a>
            </div>
-     </div>
+        </div>
      </nav>
-     
-    
-
-     <section class="wrapper">
+    <section class="wrapper">
      <?php 
          $name = $_GET['edit'];
          $query = mysqli_query($conn,"SELECT firstname,lastname FROM tblresidentdata Where id = '$name'");
@@ -124,8 +120,7 @@ include_once('dbconn.php');
            <option>Please select</option>
            <option>Yes</option>
            <option>No</option>
-          
-       </select>
+        </select>
 
               
        <label>Size</label>
