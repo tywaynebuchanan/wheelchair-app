@@ -414,6 +414,11 @@ select{
 
     border: 20px solid grey;
 }
+
+.search input[type="text"]
+{
+   border: none;
+}
   
 
 

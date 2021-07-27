@@ -27,6 +27,17 @@
          <h1>My Father's House</h1>
       </div>
 </div>
+
+<section>
+   <div class="wrapper">
+      <div class="search">
+         <label>Search</label>
+         <input type="text" name="search" id="search">
+      </div>
+      
+      
+   </div>
+</section>
 </section>
 <section class="wrapper">
 <table>
