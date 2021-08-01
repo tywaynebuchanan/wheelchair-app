@@ -1,4 +1,4 @@
-  
+ 
 <!-- <?php
 $conn_error = "Could not connect";
 $db_host = 'us-cdbr-east-04.cleardb.com';
@@ -8,7 +8,6 @@ $db_password ='330c4802';
 $mysql_db ='heroku_46bb92508100522';
 $conn = mysqli_connect($db_host,$db_user,$db_password) or die ('The username or password is incorrect');
 mysqli_select_db($conn,$mysql_db) or die('Not such database present');
-
 ?> -->
 
 <?php
