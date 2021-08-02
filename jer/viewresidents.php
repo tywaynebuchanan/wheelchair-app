@@ -84,14 +84,18 @@
      </div>
     <div class="row">
             <div class="col-2">
-            <img src=<?php echo $image1 ?> alt="" id="productImg">
+                <?php echo "<img src='../images/jer/".$firstname.$lastname."FrontView.jpg' id ='productImg' >" ?>
+            <!-- <img src="../images/jer/.$firstname$lastname.jpg" alt="" id="productImg"> -->
 
             <div class="small-img-row">
                 <div class="small-img-col">
-                    <img src=<?php echo $image1 ?> width= "100%" alt="" class="small-img">
+
+                <?php echo "<img src='../images/jer/".$firstname.$lastname."FrontView.jpg' width = '100%' class ='small-img' >" ?>
+                    <!-- <img src=<?php echo $image1 ?> width= "100%" alt="" class="small-img"> -->
                 </div>
                 <div class="small-img-col">
-                    <img src=<?php echo $image2 ?>  width= "100%" alt="" class="small-img">
+                <?php echo "<img src='../images/jer/".$firstname.$lastname."SideView.jpg' width = '100%' class ='small-img' >" ?>
+                    <!-- <img src=<?php echo $image2 ?>  width= "100%" alt="" class="small-img"> -->
                 </div>
                 <div class="small-img-col">
                     <img src="images/1.jpg"  width= "100%" alt="" class="small-img">
