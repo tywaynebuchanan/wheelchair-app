@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/base-min.css"> -->
     <title>WheelChair Management System</title>
 </head>
@@ -174,6 +175,6 @@
   $conn->close(); // Close database connection
 ?> 
   <script src="../main.js"></script>  
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  
 </body>
 </html>
