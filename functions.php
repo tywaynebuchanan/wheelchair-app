@@ -8,8 +8,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" & !empty($_POST))
   $username = mysqli_escape_string($conn,$_POST['username']);
   $password = md5($_POST['password']);
 
-  $username = stripslashes($myusername);
-  $password = stripslashes($mypassword);
+//   $username = stripslashes($username);
+//   $password = stripslashes($password);
 
   $query = mysqli_query($conn,"SELECT * from tblusers where username = '$username' AND password = '$password'");
 
