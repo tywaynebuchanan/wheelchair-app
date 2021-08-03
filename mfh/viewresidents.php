@@ -101,20 +101,7 @@
                     <img src="images/1.jpg"  width= "100%" alt="" class="small-img">
                 </div>
             </div>
-            <table class = "infotable">
-                            <tbody>
-                                <tr><td>Arrival Date:12/12/2000 </td></tr>
-                                <tr><td>Tranfser from: MFH <?php ?></td></tr>
-                                <tr><td>Condition: Cerebal Palsy <?php ?> </td></tr>
-                                <!-- <tr><td>D-Width at Knee: <?php echo $chest?></td></tr>
-                                <tr><td>E-Seat to Top of Head: <?php echo $hip?></td></tr>
-                                <tr><td>F-Seat to Top of Shoulder (L, R): <?php echo $wknee?></td></tr>
-                                <tr><td>G-Seat to Axilla (L,R) Armpit: <?php echo $sth?></td></tr>
-                                <tr><td>H- Chest Depth (L,R) Back to Tip of Chest: <?php echo $sta?> </td></tr>
-                                <tr><td>I. Seat Depth (L,R) Actual - 2-3 Fingers: <?php echo $seatdepth?></td></tr>
-                                <tr><td>J- Seat to Footplate (L,R): <?php echo $stfp?></td></tr> -->
-                             </tbody>
-                           </table>
+            
         </div>
 
         <div class="col-2">
