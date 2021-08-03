@@ -18,7 +18,7 @@
 <nav>
         <div class="nav-container">
            <div class="wrapper">
-              <a href="../index.php"><img src="../images/logo.png" alt="Mustard Seed Logo"></a>
+              <a href="../homepage.php"><img src="../images/logo.png" alt="Mustard Seed Logo"></a>
            </div>
      </div>
 </nav>

@@ -15,7 +15,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" & !empty($_POST))
 
   if($count == 1) {
        
-    header("location: index.php");
+    header("location: homepage.php");
  }else {
     echo "Your Login Name or Password is invalid";
  }
