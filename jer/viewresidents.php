@@ -84,7 +84,7 @@
      </div>
     <div class="row">
             <div class="col-2">
-                <?php echo "<img src='../images/jer/".$firstname.$lastname."FrontView.jpg' id ='productImg' >" ?>
+                <?php echo "<img src='../images/jer/".$firstname.$lastname."FrontView.jpg' id ='productImg' onError='this.src='../images/noimage.jpg''>" ?>
             <!-- <img src="../images/jer/.$firstname$lastname.jpg" alt="" id="productImg"> -->
 
             <div class="small-img-row">
