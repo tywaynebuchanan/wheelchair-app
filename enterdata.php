@@ -1,39 +1,10 @@
 <?php 
 
 include_once('dbconn.php');
-$message = "";
-if(isset($_POST['submit']))
-{
-    $image1 = "images/noimage.jpg";
-    $image2 = "images/noimage.jpg";
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $dob = $_POST['dob'];
-    $location = $_POST['location'];
-    $gender = $_POST['gender'];
-    
- $location_explode = explode(':',$location);
- $location = $location_explode[0];
- $location2 = $location_explode[1];
-
- $today = date("Y-m-d");
- $age = date_diff(date_create($dob),date_create($today));
- $realage = strval($age->format('%y'));
- 
+include('editfunction.php');
 
 
-    $query = "INSERT INTO tblresidentdata (`image1`,`image2`,`firstname`,`lastname`,`location`,`location1`,`age`,`dob`,`gender`) VALUES ('$image1','$image2','$firstname','$lastname','$location2','$location','$realage','$dob','$gender')";
 
-      if(mysqli_query($conn, $query)){
-       $message =  "Records added successfully.";
-       $hide = "show success";
-    } else{
-        $message = "ERROR: Could not able to execute $query. " . mysqli_error($conn);
-        $hide = "show danger";
-    }
-
-    mysqli_close($conn);
-}
 
 ?>
 
@@ -65,18 +36,18 @@ if(isset($_POST['submit']))
         </div>
   </section>
 
-  <section class="wrapper">
-  <div class="alert <?php echo $hide?>">
-      <span class="fas fa-exclamation-circle"></span>
-      <span class = "message"><?php echo $message?></span>   
-  </div>
-  </section>
- 
+
 <section class="wrapper">
-    <form class ="pure-form pure-form-stacked" action="enterdata.php" method="post">
+    <form class ="pure-form pure-form-stacked" action="" method="post">
         <fieldset>
 
-            <legend></legend>
+        <fieldset class="pure-group">
+        <label for="textarea">Additional Notes</label>
+        <textarea class="pure-input-1-2" placeholder="Enter recommendations here"  name = 'notes' cols="30" rows="10" required></textarea>
+    </fieldset>
+
+
+            <!-- <legend></legend>
         <div class="pure-g">
             <div class="pure-u-1 pure-u-md-1-3">
                 <label for="multi-first-name">First Name</label>
@@ -100,11 +71,11 @@ if(isset($_POST['submit']))
 
                
             </div>
-            <!-- <div class="pure-u-1 pure-u-md-1-3"> 
+             <div class="pure-u-1 pure-u-md-1-3"> 
                 <label for="multi-city">City</label>
                 <input type="text" id="multi-city" class="" />
             </div> -->
-            <div class="pure-u-1 pure-u-md-1-3">
+            <!-- <div class="pure-u-1 pure-u-md-1-3">
                 <label for="multi-state">Apostolite</label>
                 <select name="location" id="multi-state" class="pure-input-1-2" >
                     <option>--Select One--</option>
@@ -120,7 +91,7 @@ if(isset($_POST['submit']))
                     <option value ="MC:Mary Child">Jacob Ladder</option>
                 </select>
             </div>
-        </div>
+        </div>  -->
        
         <button type="submit" name = "submit" class="pure-button pure-button-primary special">Submit</button>
         <a class = "cancel-link" onclick="window.history.back();">Cancel</a>

@@ -23,7 +23,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" & !empty($_POST))
         }
        elseif($role =='Viewer')
        {
-        $link = '../mfh/mfh.php';
+        $link = 'mfh/mfh.php';
         }
 
   if($count == 1) {

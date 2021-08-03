@@ -1,5 +1,7 @@
 <?php
+   session_start();
    include_once('../dbconn.php');
+   
 ?>
 
 <!DOCTYPE html>
@@ -9,6 +11,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../styles.css">
+  
   <title>WheelChair Management System</title>
 </head>
 <body>
@@ -27,20 +30,22 @@
          <h1>My Father's House</h1>
       </div>
 </div>
+</section>
+
 
 <section>
-   <div class="wrapper">
-      <div class="search">
-         <label>Search</label>
-         <input type="text" name="search" id="search">
-      </div>
-      
-      
-   </div>
+   <?php  if(isset($_SESSION['message'])): ?>
+<div class="alert_box <?php echo $_SESSION['messagecolor']?>">
+<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+<?php echo $_SESSION['message'];
+unset($_SESSION['message']);
+ endif;?>
+
+</div>
 </section>
-</section>
+
 <section class="wrapper">
-<table>
+<table id="table">
       <thead>
         <tr>
           <th>First Name</th>
@@ -68,7 +73,7 @@ if($query->num_rows > 0){
 
   
   echo '<tr><td>'.$name.'</td><td>'.$lname.'</td><td>'.$location.'</td><td>'.$age.'</td>
-  <td><a class = "navlink" href = "viewresidents.php?name='.$id.'">View</a></td><td><a class = "navlink" href ="edit.php?edit='.$id.'">Edit</a></td></tr>';
+  <td><a class = "navlink" href = "viewresidents.php?name='.$id.'">View</a></td><td><a class = "navlink" href ="../enterdata.php?edit='.$id.'">Edit</a></td></tr>';
 
 
   
@@ -100,6 +105,6 @@ if($query->num_rows > 0){
    </nav>
 </footer>
 
-<script src="main.js"></script>
+<!-- <script src="../main.js"></script> -->
 </body>
 </html>
