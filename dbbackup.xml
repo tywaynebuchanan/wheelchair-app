@@ -48,3 +48,70 @@ $mysql_db ='wheelchairapp';
 $conn = mysqli_connect($db_host,$db_user,$db_password) or die ('The username or password is incorrect');
 mysqli_select_db($conn,$mysql_db) or die('Not such database present');
 ?>  -->
+
+
+/*Alert Messages */
+
+.alert{
+   
+    padding: 20px 40px;
+    min-width: 420px;
+    position: absolute;
+    max-width: 1000px;
+    right: 15px;
+    bottom: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+
+/* .success{
+    background: #5cb85c;
+    border-left: 10px solid #008000;
+    color: #008000;
+}
+.danger{
+
+    background:#d9534f;
+    border-left: 10px solid #c30202;
+    color: white;
+} */
+
+
+.alert.show
+{
+    animation: slide-show 1s ease forwards;
+}
+
+@keyframes slide-show {
+
+    0% {
+        transform: translateX(100%);
+    }
+
+    40% {
+        transform: translateX(-10%);
+    }
+
+    
+    80% {
+        transform: translateX(0%);
+    }
+
+    
+    100% {
+        transform: translateX(-10px);
+    }
+    
+}
+
+.alert.hide
+{
+    display: none;
+}
+
+.alert.disappear
+{
+    opacity: 0;
+}
