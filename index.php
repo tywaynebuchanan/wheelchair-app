@@ -1,7 +1,8 @@
 <?php 
-
+session_start();
 include ('dbconn.php');
 include('summary.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +21,9 @@ include('summary.php');
     <div class="nav-container">
            <div class="wrapper">
               <a href="index.php"><img src="images/logo.png" alt="Mustard Seed Logo"></a>
+           </div>
+           <div class="logout">
+               <a class = "link" href="logout.php">Logout<a>
            </div>
      </div>
 </nav>

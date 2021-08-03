@@ -1,3 +1,9 @@
+<?php 
+include_once('functions.php');
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,14 +17,14 @@
 
 <div class="center">
     <h1>Login</h1>
-    <form action="login.php" method="post">
+    <form action="" method="post">
         <div class="txt_field">
-            <input type="text">
+            <input type="text" name="username" >
             <span></span>
             <label>Username </label>
         </div>
         <div class="txt_field">
-            <input type="password">
+            <input type="password" name = "password">
             <span></span>
             <label>Password</label>
         </div>
