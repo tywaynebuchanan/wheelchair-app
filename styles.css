@@ -362,10 +362,8 @@ select{
 .alert_box{
     margin: 10px 10px 15px 10px;
     padding: 15px;
-   
     color: white;
- 
-  border-radius: 10px;
+   border-radius: 10px;
 }
 
 .closebtn {
@@ -385,5 +383,55 @@ select{
   .danger{
       background-color: #D81F1F;
   }
+
+  /*Nav Bar New */
+
+  header{
+      
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: -o-flex;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 70px;
+      background: #204B7B;
+      font-family: 'Poppins', sans-serif;
+  }
+
+  .logo
+  {
+      cursor: pointer;
+  }
+
+  .nav-area
+{
+    list-style-type: none;
+
+}
+
+.nav-area li a 
+{
+    transition: .3s;
+    color: #EFF5F3;
+    text-decoration: none;
+}
+
+.nav-area li{
+    display: inline-block;
+    padding: 0 15px;
+    text-transform: uppercase;
+}
+
+.btn-area{
+    cursor: pointer;
+    background-color: #E1C509;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 30px;
+    color: #204B7B;
+    border-radius: 5px;
+}
 
 
