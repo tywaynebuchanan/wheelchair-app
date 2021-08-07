@@ -18,6 +18,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" & !empty($_POST))
 
 
   $role = $row['role'];
+  $firstname = $row['firstname'];
+  $lastname = $row['lastname'];
     if($role =='Administrator'){
         $link = 'homepage.php';
         }
@@ -28,14 +30,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST" & !empty($_POST))
 
   if($count == 1) {
     
-    $_session["username"] = $username;
-    $_session["password"] = $password;
-$_session["role"] = $row['role'];
+    $_SESSION["username"] = $username;
+    $_SESSION["password"] = $password;
+    $_SESSION["firstname"] = $firstname;
+    $_SESSION["lastname"] = $lastname;
+$_SESSION["role"] = $row['role'];
 header("Location: ".$link."");
-  
-
-
-    // header("location: homepage.php");
+      // header("location: homepage.php");
  }else {
     echo "Your Login Name or Password is invalid";
  }

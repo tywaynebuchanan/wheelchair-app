@@ -1,9 +1,7 @@
-<?php ob_start();
-include ('dbconn.php');
-// Start Session 
-session_start();
+<?php 
 
-$name = $_SESSION['name'];
-
+if (!isset($_SESSION['username']) == true) {
+    header('Location:../index.php');
+}
 
 ?>

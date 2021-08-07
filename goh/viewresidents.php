@@ -1,5 +1,7 @@
 <?php
+session_start();
    include_once('../dbconn.php');
+   include('../sections.php');
 
 ?>
 <!DOCTYPE html>
@@ -13,24 +15,6 @@
     <title>WheelChair Management System</title>
 </head>
 <body>
-
-<nav>
-        <div class="nav-container">
-           <div class="wrapper">
-              <a href="index.php"><img src="../images/logo.png" alt="Mustard Seed Logo"></a>
-           </div>
-     </div>
-</nav>
-
-<!-- 
-<section>
-      <div class="hero-container">
-         <div class="wrapper">
-         <a class = "link" href="index.php"><h1><?php echo $location?></h1></a>
-      </div>
-</div>
-</section> -->
-      
   
 </section>
         <?php

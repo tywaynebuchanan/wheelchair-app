@@ -1,5 +1,7 @@
 <?php
    include_once('../dbconn.php');
+   include('../sections.php');
+   include('../session.php');
 ?>
 
 <!DOCTYPE html>

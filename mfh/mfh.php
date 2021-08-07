@@ -1,6 +1,8 @@
 <?php
    session_start();
    include_once('../dbconn.php');
+   include("../sections.php");
+   include('../session.php');
    
 ?>
 
@@ -11,38 +13,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../styles.css">
+  <script src="https://kit.fontawesome.com/f517f78717.js" crossorigin="anonymous"></script>
   
   <title>WheelChair Management System</title>
 </head>
 <body>
-<!-- 
-<nav>
-        <div class="nav-container">
-           <div class="wrapper">
-              <a href="../homepage.php"><img src="../images/logo.png" alt="Mustard Seed Logo"></a>
-           </div>
-           <div class="navbar">
-              <a href="../logout.php">Logout</a>
-           </div>
-     </div>
-     </nav> -->
-
-   
-   <header >
-    
-      <img src="../images/logo.png" alt="Mustard Seed Logo" class="logo">
-      <nav>
-         <ul class="nav-area">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Homes</a></li>
-            <li><a href="#">View Residents</a></li>
-         </ul>
-      </nav>
-      <a href="../logout.php" class="btn-area">Logout</a>
-     
-      
-   </header>
-
+  
 <section>
       <div class="hero-container">
          <div class="wrapper">

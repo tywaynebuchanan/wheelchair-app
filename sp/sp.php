@@ -1,5 +1,8 @@
 <?php
+session_start();
    include_once('../dbconn.php');
+   include('../sections.php');
+   include('../session.php');
 ?>
 
 <!DOCTYPE html>
@@ -13,13 +16,6 @@
 </head>
 <body>
 
-<nav>
-        <div class="nav-container">
-           <div class="wrapper">
-              <a href="../index.php"><img src="../images/logo.png" alt="Mustard Seed Logo"></a>
-           </div>
-     </div>
-     </nav>
 
 <section>
       <div class="hero-container">
@@ -57,7 +53,7 @@ if($query->num_rows > 0){
 
 
   echo '<tr><td>'.$name.'</td><td>'.$lname.'</td><td>'.$location.'</td><td>'.$age.'</td>
-  <td><a class = "navlink" href = "viewresidents.php?name='.$id.'">View</a></td><td><a class = "navlink" href ="edit.php?edit='.$id.'">Edit</a></td></tr>';
+  <td><a class = "navlink_button" href = "viewresidents.php?name='.$id.'">View</a></td><td><a class = "navlink_button" href ="edit.php?edit='.$id.'">Edit</a></td></tr>';
  
  }
 }
