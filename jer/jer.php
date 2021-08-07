@@ -48,8 +48,8 @@ session_start();
                   $age = $row['age'];
                   $id = $row['id'];
                   echo '<tr><td>'.$name.'</td><td>'.$lname.'</td><td>'.$location.'</td><td>'.$age.'</td>
-                  <td><a class = "navlink" href = "viewresidents.php?name='.$id.'">
-                  <i class="far fa-eye"></i>View</a></td><td><a class = "navlink" href ="edit.php?edit='.$id.'">
+                  <td><a class = "navlink_button" href = "viewresidents.php?name='.$id.'">
+                  <i class="far fa-eye"></i>View</a></td><td><a class = "navlink_button" href ="edit.php?edit='.$id.'">
                   <i class="fas fa-edit"></i>Edit</a></td></tr>';
                 }
             }

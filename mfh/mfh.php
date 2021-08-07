@@ -68,7 +68,7 @@ if($query->num_rows > 0){
 
   
   echo '<tr><td>'.$name.'</td><td>'.$lname.'</td><td>'.$location.'</td><td>'.$age.'</td>
-  <td><a class = "navlink" href = "viewresidents.php?name='.$id.'">View</a></td><td><a class = "navlink" href ="../enterdata.php?edit='.$id.'">Edit</a></td></tr>';
+  <td><a class = "navlink_button" href = "viewresidents.php?name='.$id.'">View</a></td><td><a class = "navlink_button" href ="../enterdata.php?edit='.$id.'">Edit</a></td></tr>';
 
 
   
