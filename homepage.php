@@ -86,8 +86,8 @@ if (!isset($_SESSION['username']) == true) {
          <td><?php echo $totalmalejer?></td>
         </tr>
 
-        <tr><td><a class = "link" href = "jl/jl.php">Jacob Ladder</a></td>
-        <tr><td><a class = "link" href = "ba/ba.php">Blessed Assurance</a></td>
+        <!-- <tr><td><a class = "link" href = "jl/jl.php">Jacob Ladder</a></td>
+        <tr><td><a class = "link" href = "ba/ba.php">Blessed Assurance</a></td> -->
         </tbody>
     </table>
         
