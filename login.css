@@ -26,6 +26,11 @@ body{
      
 }
 
+.center div{
+    text-decoration: underline;
+    }
+    
+
 .center p
 {
     text-align: center;
@@ -139,3 +144,8 @@ input[type="submit"]:hover{
 .signup a:hover{
     text-decoration: underline;
 }
+
+
+/*Alert Box */
+
+

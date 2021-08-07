@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('dbconn.php');
-
+$message = '';
 if($_SERVER["REQUEST_METHOD"] == "POST" & !empty($_POST))
 {
 
@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" & !empty($_POST))
   $row = mysqli_fetch_array($query);
   $count = mysqli_num_rows($query);
 
-
+  
   $role = $row['role'];
   $firstname = $row['firstname'];
   $lastname = $row['lastname'];
@@ -38,7 +38,7 @@ $_SESSION["role"] = $row['role'];
 header("Location: ".$link."");
       // header("location: homepage.php");
  }else {
-    echo "Your Login Name or Password is invalid";
+    $message = "It looks like you dont have access to the system";
  }
 }
 

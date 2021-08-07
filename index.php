@@ -13,8 +13,11 @@ include_once('functions.php');
 </head>
 <body>
 
+
 <div class="center">
+   
     <h1>Login</h1>
+    <div><?php echo $message ?></div>
     <form action="" method="post">
         <div class="txt_field">
             <input type="text" name="username" >
