@@ -1,5 +1,6 @@
 <?php
    include_once('../dbconn.php');
+   include('../sections.php');
 
 ?>
 <!DOCTYPE html>
@@ -13,24 +14,6 @@
     <title>WheelChair Management System</title>
 </head>
 <body>
-
-<nav>
-        <div class="nav-container">
-           <div class="wrapper">
-              <a href="../index.php"><img src="../images/logo.png" alt="Mustard Seed Logo"></a>
-           </div>
-     </div>
-</nav>
-
-<!-- 
-<section>
-      <div class="hero-container">
-         <div class="wrapper">
-         <a class = "link" href="index.php"><h1><?php echo $location?></h1></a>
-      </div>
-</div>
-</section> -->
-      
   
 </section>
         <?php
@@ -80,7 +63,7 @@
  <!--Single Product Detials-->
  <div class="small-container single-product">
      <div class="wrapper">
-     <a class = "navlink" href="sp.php">Back</a>
+     <a class = "navlink_button" href="sp.php">Back</a>
      </div>
     <div class="row">
             <div class="col-2">
@@ -93,12 +76,12 @@
                 <div class="small-img-col">
                     <img src=<?php echo $image2 ?>  width= "100%" alt="" class="small-img">
                 </div>
-                <div class="small-img-col">
+                <!-- <div class="small-img-col">
                     <img src="images/1.jpg"  width= "100%" alt="" class="small-img">
                 </div>
                 <div class="small-img-col">
                     <img src="images/1.jpg"  width= "100%" alt="" class="small-img">
-                </div>
+                </div> -->
             </div>
             <table class = "infotable">
                             <tbody>

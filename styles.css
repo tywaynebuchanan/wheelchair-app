@@ -82,7 +82,9 @@ body{
  
  .small-img-row{
      display:flex;
-     justify-content: space-between;
+     justify-content:space-evenly;
+     padding-top:10px;
+   
  }
 
  .thumbnail{

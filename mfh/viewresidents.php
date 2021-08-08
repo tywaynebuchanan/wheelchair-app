@@ -64,7 +64,7 @@
  <!--Single Product Detials-->
  <div class="small-container single-product">
      <div class="wrapper">
-     <a class = "navlink" href="mfh.php">Back</a>
+     <a class = "navlink_button" href="mfh.php">Back</a>
      </div>
     <div class="row">
             <div class="col-2">
@@ -77,12 +77,12 @@
                 <div class="small-img-col">
                     <img src=<?php echo $image2 ?>  width= "100%" alt="" class="small-img">
                 </div>
-                <div class="small-img-col">
-                    <img src="images/1.jpg"  width= "100%" alt="" class="small-img">
+                <!-- <div class="small-img-col">
+                    <img src="../images/noimage.jpg"  width= "100%" alt="" class="small-img">
                 </div>
                 <div class="small-img-col">
-                    <img src="images/1.jpg"  width= "100%" alt="" class="small-img">
-                </div>
+                    <img src="../images/noimage.jpg"  width= "100%" alt="" class="small-img">
+                </div> -->
             </div>
             
         </div>

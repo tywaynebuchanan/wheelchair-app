@@ -85,12 +85,12 @@
                 <div class="small-img-col">
                     <img src=<?php echo $image2 ?>  width= "100%" alt="" class="small-img">
                 </div>
-                <div class="small-img-col">
+                <!-- <div class="small-img-col">
                     <img src="images/1.jpg"  width= "100%" alt="" class="small-img">
                 </div>
                 <div class="small-img-col">
                     <img src="images/1.jpg"  width= "100%" alt="" class="small-img">
-                </div>
+                </div> -->
             </div>
             <table class = "infotable">
                             <tbody>
