@@ -71,7 +71,7 @@ unset($_SESSION['message']);
        
         <?php 
 
-$query = mysqli_query($conn,"SELECT * FROM tblresidentdata where location1 = 'MFH' and wheelchairbound = 'Yes' ORDER BY notes ASC");
+$query = mysqli_query($conn,"SELECT * FROM tblresidentdata where COALESCE(notes,'') !=''");
 
 if($query->num_rows > 0){
  while ($row = mysqli_fetch_assoc($query))
