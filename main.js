@@ -3,9 +3,8 @@ let smallImg = document.getElementsByClassName("small-img");
 
 smallImg[0].onclick = function () {
     productImg.src = smallImg[0].src;
-   
-
 }
+
 smallImg[1].onclick = function () {
     productImg.src = smallImg[1].src;
 }

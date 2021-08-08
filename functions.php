@@ -36,8 +36,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" & !empty($_POST))
     $_SESSION["password"] = $password;
     $_SESSION["firstname"] = $firstname;
     $_SESSION["lastname"] = $lastname;
-    $_SESSION["timelogin"] = time();
-$_SESSION["role"] = $row['role'];
+  $_SESSION["role"] = $row['role'];
 header("Location: ".$link."");
       // header("location: homepage.php");
  }else {

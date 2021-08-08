@@ -17,11 +17,9 @@ include_once('functions.php');
 <div class="center">
    
     <h1>Login</h1>
-    <!-- <?php if(isset($_SESSION['msgcolor'])): ?> -->
+  
    <div class = "alert <?php echo $msgcolor?>"><?php echo $message ?></div>
-   <!-- <? unset($_SESSION['mgscolor']);?> -->
-   <!-- <?php endif;?> -->
-    <form action="" method="post">
+     <form action="" method="post">
         <div class="txt_field">
             <input type="text" name="username" id="username">
             <span></span>
