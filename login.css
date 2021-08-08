@@ -149,12 +149,9 @@ input[type="submit"]:hover{
    
     padding: 10px 20px;
     max-width: 300px;
-    /* position: absolute; */
-    /* right: 15px;
-    bottom: 10px; */
     border-radius: 10px;
-    
     margin: 0 auto;
+    text-align: center;
   }
 
   .danger
