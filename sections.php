@@ -5,6 +5,7 @@
        <ul class="nav-area">
           <li><a href="../homepage.php">Home</a></li>
           <li><a href="#">Homes</a></li>
+          <li><a href="../repairs.php">Repairs</a></li>
           <li><a href="#">View Residents</a></li>
        </ul>
     </nav>

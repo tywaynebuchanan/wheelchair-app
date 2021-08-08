@@ -1,7 +1,8 @@
 <?php
-   include_once('../dbconn.php');
-   include("../sections.php");
-   include('../session.php');
+session_start();
+   include_once('dbconn.php');
+//    include("sections.php");
+   include('session.php');
    
 ?>
 
@@ -11,17 +12,34 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="styles.css">
   <script src="https://kit.fontawesome.com/f517f78717.js" crossorigin="anonymous"></script>
   
   <title>WheelChair Management System</title>
 </head>
 <body>
+
+<header >
+    <img src="images/logo.png" alt="Mustard Seed Logo" class="logo">
+    <nav>
+       <ul class="nav-area">
+          <li><a href="homepage.php">Home</a></li>
+          <li><a href="#">Homes</a></li>
+          <li><a href="#">Repairs</a></li>
+          <li><a href="#">View Residents</a></li>
+       </ul>
+    </nav>
+    <div class = "nav-end">
+        <i class="far fa-user-circle fa-lg"></i>
+        <a href="#" class="nav-end-link"><?php echo $_SESSION["firstname"]." ".$_SESSION["lastname"]?></a>
+        <a href="logout.php" class="btn-area">Logout</a>
+    </div>
+ </header>
   
 <section>
       <div class="hero-container">
          <div class="wrapper">
-         <h1>My Father's House</h1>
+         <h1>Repairs</h1>
       </div>
 </div>
 </section>
@@ -44,9 +62,9 @@ unset($_SESSION['message']);
         <tr>
           <th>First Name</th>
           <th>Last Name</th>
-          <th>Location</th>
-          <th>Age</th>
-          <th colspan = '3'>Action</th>
+          <th>Repair Notes</th>
+          <th>Status</th>
+          <!-- <th colspan = '2'>Action</th> -->
           </tr>
       <thead>
       <tbody>
@@ -58,16 +76,14 @@ $query = mysqli_query($conn,"SELECT * FROM tblresidentdata where location1 = 'MF
 if($query->num_rows > 0){
  while ($row = mysqli_fetch_assoc($query))
  {
-   // echo "<tr><td>".$row['firstname']."</td></tr><tr><td>";
    $name = $row['firstname'];
   $lname = $row['lastname'];
-  $location = $row['location'];
+  $repairnotes = $row['notes'];
   $age = $row['age'];
   $id = $row['id'];
 
   
-  echo '<tr><td>'.$name.'</td><td>'.$lname.'</td><td>'.$location.'</td><td>'.$age.'</td>
-  <td><a class = "navlink_button" href = "viewresidents.php?name='.$id.'">View</a></td><td><a class = "navlink_button" href ="../enterdata.php?edit='.$id.'">Edit</a></td><td><a class = "navlink_button" href ="../repairdata.php?repair='.$id.'">Repairs</a></td></tr>';
+  echo '<tr><td>'.$name.'</td><td>'.$lname.'</td><td>'.$repairnotes.'</td><td>In Progress</td></tr>';
 
 
   
