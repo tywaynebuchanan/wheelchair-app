@@ -27,5 +27,10 @@ let button = document.getElementById('button').addEventListener('click',()=>{
    
 })
 
+document.getElementsById('username').onblur = function(){
+    alert('Field is black');
+}
+
+
 
 

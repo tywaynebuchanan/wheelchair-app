@@ -17,15 +17,18 @@ include_once('functions.php');
 <div class="center">
    
     <h1>Login</h1>
-    <div><?php echo $message ?></div>
+    <!-- <?php if(isset($_SESSION['msgcolor'])): ?> -->
+   <div class = "alert <?php echo $msgcolor?>"><?php echo $message ?></div>
+   <!-- <? unset($_SESSION['mgscolor']);?> -->
+   <!-- <?php endif;?> -->
     <form action="" method="post">
         <div class="txt_field">
-            <input type="text" name="username" >
+            <input type="text" name="username" id="username">
             <span></span>
             <label>Username </label>
         </div>
         <div class="txt_field">
-            <input type="password" name = "password">
+            <input type="password" name = "password" id ="password">
             <span></span>
             <label>Password</label>
         </div>
