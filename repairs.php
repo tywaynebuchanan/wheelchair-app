@@ -3,7 +3,8 @@ session_start();
    include_once('dbconn.php');
 //    include("sections.php");
    include('session.php');
-   
+   include('summary.php');
+      
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +26,7 @@ session_start();
        <ul class="nav-area">
           <li><a href="homepage.php">Home</a></li>
           <li><a href="#">Homes</a></li>
-          <li><a href="#">Repairs</a></li>
+          <li><a href="#">Repairs<span class="color">(<?php echo $totalrepairs?>)</span></a></li>
           <li><a href="#">View Residents</a></li>
        </ul>
     </nav>
@@ -40,6 +41,7 @@ session_start();
       <div class="hero-container">
          <div class="wrapper">
          <h1>Repairs</h1>
+        
       </div>
 </div>
 </section>
@@ -63,6 +65,7 @@ unset($_SESSION['message']);
           <th>First Name</th>
           <th>Last Name</th>
           <th>Repair Notes</th>
+          <th>Location</th>
           <th>Status</th>
           <!-- <th colspan = '2'>Action</th> -->
           </tr>
@@ -78,12 +81,13 @@ if($query->num_rows > 0){
  {
    $name = $row['firstname'];
   $lname = $row['lastname'];
+  $location = $row['location'];
   $repairnotes = $row['notes'];
   $age = $row['age'];
   $id = $row['id'];
 
   
-  echo '<tr><td>'.$name.'</td><td>'.$lname.'</td><td>'.$repairnotes.'</td><td>In Progress</td></tr>';
+  echo '<tr><td>'.$name.'</td><td>'.$lname.'</td><td>'.$repairnotes.'</td><td>'.$location.'</td><td>In Progress</td></tr>';
 
 
   
