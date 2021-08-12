@@ -10,9 +10,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST" & !empty($_POST))
   $username = mysqli_escape_string($conn,$_POST['username']);
   $password = md5($_POST['password']);
 
-//   $username = stripslashes($username);
-//   $password = stripslashes($password);
-
   $query = mysqli_query($conn,"SELECT * from tblusers where username = '$username' AND password = '$password'");
 
   $row = mysqli_fetch_array($query);
@@ -38,8 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" & !empty($_POST))
     $_SESSION["lastname"] = $lastname;
   $_SESSION["role"] = $row['role'];
 header("Location: ".$link."");
-      // header("location: homepage.php");
- }else {
+      }else {
   $msgcolor = "danger";
     $message = "Incorrect username or password!";
  }
