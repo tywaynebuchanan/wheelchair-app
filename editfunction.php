@@ -1,6 +1,5 @@
 <?php
 session_start();
-// $message = "";
 $id = $_GET['edit'];
 if($_SERVER["REQUEST_METHOD"] == "POST" & !empty("POST"))
 {

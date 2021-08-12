@@ -1,5 +1,3 @@
-
-
 <header>
     <img src="../images/logo.png" alt="Mustard Seed Logo" class="logo">
     <nav>

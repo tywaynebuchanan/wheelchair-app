@@ -49,9 +49,6 @@ if (!isset($_SESSION['username']) == true) {
 </div>
 </section>
 
-
-
-
 <section class="wrapper">
     <table>
         <thead>
