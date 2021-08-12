@@ -3,13 +3,10 @@ session_start();
 include ('dbconn.php');
 include('summary.php');
 
-if (!isset($_SESSION['username']) == true) {
-    header('Location:../index.php');
-}
-
-
+    if (!isset($_SESSION['username']) == true) {
+        header('Location:../index.php');
+    }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

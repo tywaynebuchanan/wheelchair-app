@@ -66,8 +66,6 @@ $sptotalres = mysqli_query($conn,"SELECT Count(1)FROM tblresidentdata WHERE loca
       $row3 = mysqli_fetch_array($spmale);
       $sptotalmale = $row3[0];
 
-
-
       $countrepairs = mysqli_query($conn,"SELECT Count(*) FROM tblrepairs");
       $countrow = mysqli_fetch_array($countrepairs);
       $totalrepairs = $countrow[0];
