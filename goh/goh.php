@@ -1,6 +1,5 @@
 <?php
-session_start();
-   include_once('../dbconn.php');
+  include_once('../dbconn.php');
    include('../sections.php');
    include('../session.php')
 ?>
@@ -52,8 +51,6 @@ if($query->num_rows > 0){
   $age = $row['age'];
   $id = $row['id'];
 
-  
-
   echo '<tr><td>'.$name.'</td><td>'.$lname.'</td><td>'.$location.'</td><td>'.$age.'</td>
   <td><a class = "navlink_button" href = "viewresidents.php?name='.$id.'"><i class="far fa-eye"></i>View</a></td><td><a class = "navlink_button" href ="edit.php?edit='.$id.'"><i class="fas fa-edit"></i>Edit</a></td></tr>';
 
@@ -88,7 +85,7 @@ if($query->num_rows > 0){
 </footer>
 
 
-<script src="main.js"></script>
+<script src="../main.js"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 </body>

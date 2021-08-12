@@ -1,5 +1,5 @@
 <?php
-session_start();
+
    include_once('../dbconn.php');
    include('../sections.php');
 
@@ -64,7 +64,7 @@ session_start();
  <!--Single Product Detials-->
  <div class="small-container single-product">
      <div class="wrapper">
-     <a class = "navlink" href="goh.php">Back</a>
+     <a class = "navlink_button" href="goh.php">Back</a>
      </div>
     <div class="row">
             <div class="col-2">
@@ -157,7 +157,7 @@ session_start();
 <?php
   $conn->close(); // Close database connection
 ?> 
-  <script src="main.js"></script>  
+  <script src="../main.js"></script>  
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
 </html>

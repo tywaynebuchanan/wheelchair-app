@@ -67,6 +67,8 @@ unset($_SESSION['message']);
           <th>Repair Notes</th>
           <th>Location</th>
           <th>Status</th>
+          <th>Date Assisgned</th>
+          <th>Update</th>
           <!-- <th colspan = '2'>Action</th> -->
           </tr>
       <thead>
@@ -74,7 +76,12 @@ unset($_SESSION['message']);
        
         <?php 
 
-$query = mysqli_query($conn,"SELECT * FROM tblresidentdata where COALESCE(notes,'') !=''");
+// $query = mysqli_query($conn,"SELECT firstname,lastname FROM tblresidentdata where COALESCE(notes,'') !=''");
+$query = mysqli_query($conn,"SELECT tblresidentdata.firstname, tblresidentdata.lastname, tblresidentdata.location,
+tblrepairs.details,tblrepairs.status,tblrepairs.datecompleted
+FROM tblresidentdata 
+INNER JOIN tblrepairs ON tblresidentdata.id=tblrepairs.id;");
+
 
 if($query->num_rows > 0){
  while ($row = mysqli_fetch_assoc($query))
@@ -82,15 +89,13 @@ if($query->num_rows > 0){
    $name = $row['firstname'];
   $lname = $row['lastname'];
   $location = $row['location'];
-  $repairnotes = $row['notes'];
-  $age = $row['age'];
-  $id = $row['id'];
+  $repairnotes = $row['details'];
+  $status = $row['status'];
+  $dateassigned = $row['datecompleted'];
+   
+  echo '<tr><td>'.$name.'</td><td>'.$lname.'</td><td>'.$repairnotes.'</td><td>
+  '.$location.'</td><td>'.$status.'</td><td>'.$dateassigned.'</td><td><a class = "navlink_button" href ="#">Update</a></td></tr>';
 
-  
-  echo '<tr><td>'.$name.'</td><td>'.$lname.'</td><td>'.$repairnotes.'</td><td>'.$location.'</td><td>In Progress</td></tr>';
-
-
-  
  }
 }
   ?>
@@ -101,15 +106,13 @@ if($query->num_rows > 0){
 </table>
 </section>
 
+<section class="divider">
+
+</section>
+
 
 <?php 
-
-    
-
- 
  $conn->close(); // Close database connection
-
-
 ?>
 
 <footer>

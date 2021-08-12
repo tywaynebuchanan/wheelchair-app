@@ -1,5 +1,6 @@
 <?php 
 include_once('dbconn.php');
+include('editfunction.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,8 +22,8 @@ include_once('dbconn.php');
      </nav>
     <section class="wrapper">
      <?php 
-         $name = $_GET['edit'];
-         $query = mysqli_query($conn,"SELECT firstname,lastname FROM tblresidentdata Where id = '$name'");
+         $id = $_GET['edit'];
+         $query = mysqli_query($conn,"SELECT firstname,lastname FROM tblresidentdata Where id = '$id'");
          if($query->num_rows > 0){
              while($row = mysqli_fetch_assoc($query))
              {
@@ -39,7 +40,7 @@ include_once('dbconn.php');
     
 
 <section class="form-wrapper">
-    <form action="update.php" method="POST" class="pure-form ">
+    <form action="" method="POST" class="pure-form ">
         
         <label>Current Chair</label>
         <input class="input" type="text" name="currentchair">
@@ -69,26 +70,26 @@ include_once('dbconn.php');
         <label>Size: </label>
         <input class="input" type="text" name="currentchair">
         <label>A- Shoulder Width:</label>
-        <input class="input" type="text">
+        <input class="input" type="text" name = "a">
         <label>B- Chest Width:</label>
-        <input class="input" type="text">
+        <input class="input" type="text" name = "b">
         <label>C- Hip Width:</label>
-        <input class="input" type="text">
+        <input class="input" type="text" name = "c">
         <label>D-Width at Knee:</label>
-        <input class="input" type="text">
+        <input class="input" type="text" name = "d">
         <label>E-Seat to Top of Head:</label>
-        <input class="input" type="text">
+        <input class="input" type="text" name = "e">
         <label>F-Seat to Top of Shoulder (L, R):</label>
-        <input class="input" type="text">
+        <input class="input" type="text" name = "f">
         <label>G-Seat to Axilla (L,R) Armpit:</label>
-        <input class="input" type="text">
+        <input class="input" type="text" name = "g">
         <label>I. Seat Depth (L,R) Actual - 2-3 Fingers:</label>
-        <input class="input" type="text">
+        <input class="input" type="text" name = "h">
         <label>J- Seat to Footplate (L,R):</label>
-        <input class="input" type="text">
+        <input class="input" type="text" name = "i">
 
         <label>Type of Chair Needed:</label>
-       <select name="" id="">
+       <select name="typechair" id="">
            <option>Please select</option>
            <option>Basic</option>
            <option>Folding</option>
@@ -99,10 +100,10 @@ include_once('dbconn.php');
        </select>
 
        <label>Other</label>
-        <input class="input" type="text">
+        <input class="input" type="text" name ="typechairother">
 
        <label>Type of Back Needed:</label>
-       <select name="" id="">
+       <select name="typeback" id="">
            <option>Please select</option>
            <option>Planar</option>
            <option>Sling</option>
@@ -113,10 +114,10 @@ include_once('dbconn.php');
         
        
        <label>Other</label>
-        <input class="input" type="text">
+        <input class="input" type="text" name="typebackother">
         
         <label>Laterals</label>
-       <select name="" id="">
+       <select name="laterals" id="">
            <option>Please select</option>
            <option>Yes</option>
            <option>No</option>
@@ -124,11 +125,11 @@ include_once('dbconn.php');
 
               
        <label>Size</label>
-        <input class="input" type="text">
+        <input class="input" type="text" name="lateralsize">
 
                
-       <label>Additional Notes</label>
-        <textarea class = "textarea" name="notes" id="" cols="30" rows="10"></textarea>
+       <!-- <label>Additional Notes</label>
+        <textarea class = "textarea" name="notes" id="" cols="30" rows="10"></textarea> -->
 
         <input type="submit" name="Submit" class="submitbtn pure-button pure-button-primary">
        <a class = "cancel-link" onclick="window.history.back();">Cancel</a>

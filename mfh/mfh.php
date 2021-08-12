@@ -2,6 +2,7 @@
    include_once('../dbconn.php');
    include("../sections.php");
    include('../session.php');
+   // include('../editfunction.php');
    
 ?>
 
@@ -67,7 +68,8 @@ if($query->num_rows > 0){
 
   
   echo '<tr><td>'.$name.'</td><td>'.$lname.'</td><td>'.$location.'</td><td>'.$age.'</td>
-  <td><a class = "navlink_button" href = "viewresidents.php?name='.$id.'">View</a></td><td><a class = "navlink_button" href ="../enterdata.php?edit='.$id.'">Edit</a></td><td><a class = "navlink_button" href ="../repairdata.php?repair='.$id.'">Repairs</a></td></tr>';
+  <td><a class = "navlink_button" href = "viewresidents.php?name='.$id.'">View</a></td><td><a class = "navlink_button" href ="../edit.php?edit='.$id.'">Edit</a></td><td>
+  <a class = "navlink_button" href ="../repairdata.php?repair='.$id.'"><i class="fas fa-tools"></i> Repairs</a></td></tr>';
 
 
   

@@ -27,7 +27,7 @@ if (!isset($_SESSION['username']) == true) {
     <img src="images/logo.png" alt="Mustard Seed Logo" class="logo">
     <nav>
        <ul class="nav-area">
-          <li><a href="../homepage.php">Home</a></li>
+          <li><a href="homepage.php">Home</a></li>
           <li><a href="#">Homes</a></li>
           <li><a href="repairs.php">Repairs<span class="color">(<?php echo $totalrepairs?>)</span></a></li>
 

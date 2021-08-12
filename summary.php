@@ -68,7 +68,7 @@ $sptotalres = mysqli_query($conn,"SELECT Count(1)FROM tblresidentdata WHERE loca
 
 
 
-      $countrepairs = mysqli_query($conn,"SELECT Count(*) FROM tblresidentdata where notes !=''");
+      $countrepairs = mysqli_query($conn,"SELECT Count(*) FROM tblrepairs");
       $countrow = mysqli_fetch_array($countrepairs);
       $totalrepairs = $countrow[0];
-?>
+      $_SESSION["totalrepairs"] = $totalrepairs;

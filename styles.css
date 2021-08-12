@@ -174,6 +174,12 @@ body{
         background-color: #E1C509;
         border-radius: 75%;
     }
+
+    .divider
+    {
+        width: 100%;
+        height: 50vh;
+    }
      
 
 /*Footer */
@@ -181,9 +187,10 @@ body{
 
 .footer-container{
     width: 100%;
-    height: 300px;
+    height: 40vh;
     background-color: #204B7B;
     margin: 0 auto;
+    
 }
 
 /*Form CSS */
@@ -237,6 +244,7 @@ select{
     color:#f9f9f9;
     outline: none;
     border: none;
+    cursor: pointer;
 }
 
 .cancel-link {
@@ -452,6 +460,10 @@ select{
 .new 
 {
     width: 50%;
+}
+
+i{
+   color: white;
 }
 
 
