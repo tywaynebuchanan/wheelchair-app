@@ -12,6 +12,7 @@ session_start();
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../styles.css">
+  <script src="https://kit.fontawesome.com/f517f78717.js" crossorigin="anonymous"></script>
   <title>WheelChair Management System</title>
 </head>
 <body>
@@ -24,6 +25,10 @@ session_start();
 </div>
 </section>
 
+<div class="wrapper">
+     <a class = "navlink_button" href="../homepage.php">Back</a>
+     </div>
+
 <section class="wrapper">
 <table>
          <thead>
@@ -32,7 +37,7 @@ session_start();
             <th>Last Name</th>
             <th>Location</th>
             <th>Age</th>
-            <th colspan = '2'>Action</th>
+            <th colspan = '3'>Action</th>
             </tr>
          <thead>
       <tbody>
@@ -48,9 +53,8 @@ session_start();
                   $age = $row['age'];
                   $id = $row['id'];
                   echo '<tr><td>'.$name.'</td><td>'.$lname.'</td><td>'.$location.'</td><td>'.$age.'</td>
-                  <td><a class = "navlink_button" href = "viewresidents.php?name='.$id.'">
-                  <i class="far fa-eye"></i>View</a></td><td><a class = "navlink_button" href ="edit.php?edit='.$id.'">
-                  <i class="fas fa-edit"></i>Edit</a></td></tr>';
+                  <td><a class = "navlink_button" href = "viewresidents.php?name='.$id.'">View</a></td><td><a class = "navlink_button" href ="../edit.php?edit='.$id.'">Edit</a></td><td>
+                  <a class = "navlink_button" href ="../repairdata.php?repair='.$id.'"><i class="fas fa-tools"></i> Repairs</a></td></tr>';
                 }
             }
             ?>

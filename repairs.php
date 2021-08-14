@@ -20,23 +20,23 @@ session_start();
 </head>
 <body>
 
-<header >
-    <img src="images/logo.png" alt="Mustard Seed Logo" class="logo">
+<header>
+    <img src="../images/logo.png" alt="Mustard Seed Logo" class="logo">
     <nav>
        <ul class="nav-area">
-          <li><a href="homepage.php">Home</a></li>
+          <li><a href="../homepage.php">Home</a></li>
           <li><a href="#">Homes</a></li>
-          <li><a href="#">Repairs<span class="color">(<?php echo $totalrepairs?>)</span></a></li>
+          <li><a href="../repairs.php">Repairs(<?php session_start(); include('summary.php'); echo $_SESSION["totalrepairs"]?>)</a></li>
           <li><a href="#">View Residents</a></li>
+          <i class="far fa-user-circle fa-lg"></i>
+        <a href="#" class="nav-end-link"><?php echo $_SESSION["firstname"]." ".$_SESSION["lastname"]?></a>
        </ul>
     </nav>
     <div class = "nav-end">
-        <i class="far fa-user-circle fa-lg"></i>
-        <a href="#" class="nav-end-link"><?php echo $_SESSION["firstname"]." ".$_SESSION["lastname"]?></a>
-        <a href="logout.php" class="btn-area">Logout</a>
+        
+        <a href="../logout.php" class="btn-area">Logout</a>
     </div>
  </header>
-  
 <section>
       <div class="hero-container">
          <div class="wrapper">
@@ -45,6 +45,8 @@ session_start();
       </div>
 </div>
 </section>
+
+
 
 
 <section>
@@ -57,6 +59,10 @@ unset($_SESSION['message']);
 
 </div>
 </section>
+
+<div class="wrapper">
+     <a class = "navlink_button" href="../homepage.php">Back</a>
+     </div>
 
 <section class="wrapper">
 <table id="table">
@@ -80,7 +86,7 @@ unset($_SESSION['message']);
 $query = mysqli_query($conn,"SELECT tblresidentdata.firstname, tblresidentdata.lastname, tblresidentdata.location,
 tblrepairs.details,tblrepairs.status,tblrepairs.datecompleted
 FROM tblresidentdata 
-INNER JOIN tblrepairs ON tblresidentdata.id=tblrepairs.id;");
+INNER JOIN tblrepairs ON tblresidentdata.id=tblrepairs.id WHERE tblrepairs.status = 'Assigned';");
 
 
 if($query->num_rows > 0){

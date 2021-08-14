@@ -50,27 +50,27 @@ if($query->num_rows > 0){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"> -->
-  
-    <title>WheelChair Management System - Repairs</title>
+    <script src="https://kit.fontawesome.com/f517f78717.js" crossorigin="anonymous"></script>
+       <title>WheelChair Management System - Repairs</title>
 </head>
 <body>
 
-<header >
-    <img src="images/logo.png" alt="Mustard Seed Logo" class="logo">
+
+<header>
+    <img src="../images/logo.png" alt="Mustard Seed Logo" class="logo">
     <nav>
        <ul class="nav-area">
-          <li><a href="homepage.php">Home</a></li>
+          <li><a href="../homepage.php">Home</a></li>
           <li><a href="#">Homes</a></li>
-          <li><a href="repairs.php">Repairs<span class="color">(<?php echo $totalrepairs?>)</span></a></li>
-
+          <li><a href="../repairs.php">Repairs(<?php session_start(); include('summary.php'); echo $_SESSION["totalrepairs"]?>)</a></li>
           <li><a href="#">View Residents</a></li>
+          <i class="far fa-user-circle fa-lg"></i>
+        <a href="#" class="nav-end-link"><?php echo $_SESSION["firstname"]." ".$_SESSION["lastname"]?></a>
        </ul>
     </nav>
     <div class = "nav-end">
-        <i class="far fa-user-circle fa-lg"></i>
-        <a href="#" class="nav-end-link"><?php echo $_SESSION["firstname"]." ".$_SESSION["lastname"]?></a>
-        <a href="logout.php" class="btn-area">Logout</a>
+        
+        <a href="../logout.php" class="btn-area">Logout</a>
     </div>
  </header>
 
@@ -84,7 +84,7 @@ if($query->num_rows > 0){
 
  <section class="form-wrapper">
      <form action="" method="post" class="pure-form-stacked">
-         <label for="repairdetails">Repair Details</label>
+         <label for="repairdetails">Enter the information for the repair on <?php echo $firstname ?> chair</label>
          <textarea name="repair" class = "textarea" id="" cols="30" rows="10"></textarea>
          <!-- <label for="">Status</label>
          <select name="status" id="">

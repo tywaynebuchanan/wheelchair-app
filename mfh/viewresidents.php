@@ -2,6 +2,17 @@
    include_once('../dbconn.php');
    include('../sections.php');
 
+   $name = $_GET['name'];
+           $repair_query = mysqli_query($conn,"SELECT * from tblrepairs WHERE id = '$name'");
+
+           if($repair_query->num_rows > 0){
+            while ($row1 = mysqli_fetch_assoc($repair_query))
+          {
+                $repair1 = $row1['details'];
+          }
+        }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,8 +21,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/base-min.css"> -->
+    <script src="https://kit.fontawesome.com/f517f78717.js" crossorigin="anonymous"></script>
     <title>WheelChair Management System</title>
 </head>
 <body>
@@ -84,6 +94,13 @@
                     <img src="../images/noimage.jpg"  width= "100%" alt="" class="small-img">
                 </div> -->
             </div>
+
+            <table class="infotable">
+                            <tbody>
+                                <tr><td>Repair Details </td></tr>
+                                <tr><td><?php echo $repair1 ?></td></tr>
+                               </tbody>
+                           </table>
             
         </div>
 
@@ -102,7 +119,19 @@
             <p><strong>Pelvic Obliquity?: </strong><?php echo $pelvicobliquity ?></p>
             <p><strong> Low Side: </strong><?php echo $lowside?></p>
 
-                      <button class="btn" id="button">
+                     
+            
+            <!-- <p class="cta">WheelChair Measurements</p><div class="icon"><i class="far fa-plus-square"></i></div> -->
+         
+            
+            <p><strong>Type of Chair Needed: </strong><?php echo $typeofchair?></p>
+            <p><strong>Type of Back Needed: </strong><?php echo $backneeded?></p>
+            <p><strong>Laterals: </strong><?php echo $laterals?></p>
+            <p><strong>Size: </strong><?php echo $sizelats?></p>
+            <h3>Additional Notes</h3>
+            <p><?php echo $notes?></p>
+
+            <button class="btn" id="button">
                       <span class="button_icon"><i class="fas fa-plus"></i></span><span class="button_text">Show Measurements</span>
                     </button>
             <table class = "table hidetable" id="table">
@@ -119,16 +148,6 @@
                                 <tr><td>J- Seat to Footplate (L,R): <?php echo $stfp?></td></tr>
                              </tbody>
                            </table>
-            
-            <!-- <p class="cta">WheelChair Measurements</p><div class="icon"><i class="far fa-plus-square"></i></div> -->
-         
-            
-            <p><strong>Type of Chair Needed: </strong><?php echo $typeofchair?></p>
-            <p><strong>Type of Back Needed: </strong><?php echo $backneeded?></p>
-            <p><strong>Laterals: </strong><?php echo $laterals?></p>
-            <p><strong>Size: </strong><?php echo $sizelats?></p>
-            <h3>Additional Notes</h3>
-            <p><?php echo $notes?></p>
         </div>
     </div>
 </div>

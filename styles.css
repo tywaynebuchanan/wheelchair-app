@@ -15,7 +15,7 @@ body{
 
 .nav-container{
     width: 100%;
-    height: 110px;
+    height: 130px;
     background-color: #204B7B;
     margin: 0 auto;
 }
@@ -352,8 +352,9 @@ select{
 
 .infotable td
 {
-    font-weight: bold;
     text-align: justify;
+    color: red;
+    margin-top: 10px;
 }
 
 .border{
@@ -439,6 +440,7 @@ select{
     color: #F2F4F7;
     display: flex;
     padding-right: 20px;
+    
 }
 
 .btn-area{
@@ -462,9 +464,14 @@ select{
     width: 50%;
 }
 
-i{
-   color: white;
+/* Notification */
+
+li a .icon_badge
+{
+    position: absolute;
+    border: 1px solid yellow;
 }
+
 
 
 
