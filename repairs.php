@@ -82,7 +82,6 @@ unset($_SESSION['message']);
        
         <?php 
 
-// $query = mysqli_query($conn,"SELECT firstname,lastname FROM tblresidentdata where COALESCE(notes,'') !=''");
 $query = mysqli_query($conn,"SELECT tblresidentdata.firstname, tblresidentdata.lastname, tblresidentdata.location,
 tblrepairs.details,tblrepairs.status,tblrepairs.datecompleted
 FROM tblresidentdata 

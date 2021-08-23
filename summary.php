@@ -50,7 +50,7 @@ $totalresjer = mysqli_query($conn,"SELECT Count(1)FROM tblresidentdata WHERE loc
       $mfhtotalmale = $row3[0];
 
 
-$sptotalres = mysqli_query($conn,"SELECT Count(1)FROM tblresidentdata WHERE location1 = 'SP'");
+      $sptotalres = mysqli_query($conn,"SELECT Count(1)FROM tblresidentdata WHERE location1 = 'SP'");
       $row = mysqli_fetch_array($sptotalres);
       $sptotal = $row[0];
 
@@ -65,6 +65,24 @@ $sptotalres = mysqli_query($conn,"SELECT Count(1)FROM tblresidentdata WHERE loca
       $spmale = mysqli_query($conn,"SELECT Count(1)FROM tblresidentdata WHERE location1 = 'SP' and gender = 'Male'");
       $row3 = mysqli_fetch_array($spmale);
       $sptotalmale = $row3[0];
+
+
+
+      $batotalres = mysqli_query($conn,"SELECT Count(1)FROM tblresidentdata WHERE location1 = 'BA'");
+      $barow = mysqli_fetch_array($batotalres);
+      $batotal = $barow[0];
+
+      $bawheelchair = mysqli_query($conn,"SELECT Count(1)FROM tblresidentdata WHERE location1 = 'BA' and wheelchairbound = 'Yes'");
+      $barow1 = mysqli_fetch_array($bawheelchair);
+      $bawheelchairtotal = $barow1[0];
+
+      $bafemale = mysqli_query($conn,"SELECT Count(1)FROM tblresidentdata WHERE location1 = 'BA' and gender = 'Female'");
+      $barow2 = mysqli_fetch_array($bafemale);
+      $batotalfemale = $barow2[0];
+
+      $bamale = mysqli_query($conn,"SELECT Count(1)FROM tblresidentdata WHERE location1 = 'BA' and gender = 'Male'");
+      $barow3 = mysqli_fetch_array($bamale);
+      $batotalmale = $barow3[0];
 
       $countrepairs = mysqli_query($conn,"SELECT Count(*) FROM tblrepairs");
       $countrow = mysqli_fetch_array($countrepairs);

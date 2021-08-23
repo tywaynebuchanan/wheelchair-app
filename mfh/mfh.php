@@ -28,7 +28,7 @@
      <a class = "navlink_button" href="../homepage.php">Back</a>
      </div>
 
-<section>
+
    <?php  if(isset($_SESSION['message'])): ?>
 <div class="alert_box <?php echo $_SESSION['messagecolor']?>">
 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
@@ -37,7 +37,7 @@ unset($_SESSION['message']);
  endif;?>
 
 </div>
-</section>
+
 
 <section class="wrapper">
 <table id="table">

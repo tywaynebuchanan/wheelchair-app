@@ -83,8 +83,16 @@ include('summary.php');
          <td><?php echo $totalmalejer?></td>
         </tr>
 
-        <tr><td><a class = "link" href = "jl/jl.php">Jacob Ladder</a></td>
+        <!-- <tr><td><a class = "link" href = "jl/jl.php">Jacob Ladder</a></td></tr> -->
         <tr><td><a class = "link" href = "ba/ba.php">Blessed Assurance</a></td> 
+        <td><?php echo $batotal?></td>
+         <td><?php echo $bawheelchairtotal?></td>
+         <td><?php echo $batotalfemale?></td>
+         <td><?php echo $batotalmale?></td>
+
+</tr>
+
+
         </tbody>
     </table>
         

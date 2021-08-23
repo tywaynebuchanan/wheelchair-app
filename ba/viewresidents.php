@@ -1,6 +1,6 @@
 <?php
    include_once('../dbconn.php');
-
+   include('../sections.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,25 +9,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles.css">
-    <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/base-min.css"> -->
+    <script src="https://kit.fontawesome.com/f517f78717.js" crossorigin="anonymous"></script>
     <title>WheelChair Management System</title>
 </head>
 <body>
 
-<nav>
-        <div class="nav-container">
-           <div class="wrapper">
-              <a href="../index.php"><img src="../images/logo.png" alt="Mustard Seed Logo"></a>
-           </div>
-     </div>
-</nav>
-
-    
+  
   
 </section>
         <?php
             $name = $_GET['name'];
-           $res_query = mysqli_query($conn,"SELECT * from tblresidentdata WHERE id = '$name'");
+           $res_query = mysqli_query($conn,"SELECT tblresidentdata.firstname,tblresidentdata.lastname,tblresidentdata.location,tblresidentdata.dob,
+           tblresidentdata.age,tblresidentdata.gender
+           ,tblimages.image1,tblimages.image2,tblimages.image3,tblimages.image4 FROM tblresidentdata
+        JOIN tblimages ON tblresidentdata.id = tblimages.id
+           WHERE tblresidentdata.id = '$name'");
 
             if($res_query->num_rows > 0){
                 while ($row = mysqli_fetch_assoc($res_query))
@@ -61,6 +57,8 @@
                  $chestdepth = $row['chestdepth'];
                  $seatdepth = $row['seatdepth'];
                  $stfp = $row['stfp'];
+                 $image3 = $row['image3'];
+                 $image4 = $row['image4'];
                  
               }
 
@@ -72,7 +70,7 @@
  <!--Single Product Detials-->
  <div class="small-container single-product">
      <div class="wrapper">
-     <a class = "navlink" href="ba.php">Back</a>
+     <a class = "navlink_button" href="ba.php">Back</a>
      </div>
     <div class="row">
             <div class="col-2">
@@ -86,26 +84,13 @@
                     <img src=<?php echo $image2 ?>  width= "100%" alt="" class="small-img">
                 </div>
                 <div class="small-img-col">
-                    <img src="images/1.jpg"  width= "100%" alt="" class="small-img">
+                    <img src=<?php echo $image3 ?>  width= "100%" alt="" class="small-img">
                 </div>
                 <div class="small-img-col">
-                    <img src="images/1.jpg"  width= "100%" alt="" class="small-img">
+                    <img src=<?php echo $image4 ?> width= "100%" alt="" class="small-img">
                 </div>
             </div>
-            <table class = "infotable">
-                            <tbody>
-                                <tr><td>Arrival Date:12/12/2000 </td></tr>
-                                <tr><td>Tranfser from: MFH <?php ?></td></tr>
-                                <tr><td>Condition: Cerebal Palsy <?php ?> </td></tr>
-                                <!-- <tr><td>D-Width at Knee: <?php echo $chest?></td></tr>
-                                <tr><td>E-Seat to Top of Head: <?php echo $hip?></td></tr>
-                                <tr><td>F-Seat to Top of Shoulder (L, R): <?php echo $wknee?></td></tr>
-                                <tr><td>G-Seat to Axilla (L,R) Armpit: <?php echo $sth?></td></tr>
-                                <tr><td>H- Chest Depth (L,R) Back to Tip of Chest: <?php echo $sta?> </td></tr>
-                                <tr><td>I. Seat Depth (L,R) Actual - 2-3 Fingers: <?php echo $seatdepth?></td></tr>
-                                <tr><td>J- Seat to Footplate (L,R): <?php echo $stfp?></td></tr> -->
-                             </tbody>
-                           </table>
+            
         </div>
 
         <div class="col-2">
@@ -122,8 +107,13 @@
             <p><strong>Size: </strong><?php echo $size?></p>
             <p><strong>Pelvic Obliquity?: </strong><?php echo $pelvicobliquity ?></p>
             <p><strong> Low Side: </strong><?php echo $lowside?></p>
-
-                      <button class="btn" id="button">
+            <p><strong>Type of Chair Needed: </strong><?php echo $typeofchair?></p>
+            <p><strong>Type of Back Needed: </strong><?php echo $backneeded?></p>
+            <p><strong>Laterals: </strong><?php echo $laterals?></p>
+            <p><strong>Size: </strong><?php echo $sizelats?></p>
+            <h3>Additional Notes</h3>
+            <p><?php echo $notes?></p>
+            <button class="btn" id="button">
                       <span class="button_icon"><i class="fas fa-plus"></i></span><span class="button_text">Show Measurements</span>
                     </button>
             <table class = "table hidetable" id="table">
@@ -140,16 +130,6 @@
                                 <tr><td>J- Seat to Footplate (L,R): <?php echo $stfp?></td></tr>
                              </tbody>
                            </table>
-            
-            <!-- <p class="cta">WheelChair Measurements</p><div class="icon"><i class="far fa-plus-square"></i></div> -->
-         
-            
-            <p><strong>Type of Chair Needed: </strong><?php echo $typeofchair?></p>
-            <p><strong>Type of Back Needed: </strong><?php echo $backneeded?></p>
-            <p><strong>Laterals: </strong><?php echo $laterals?></p>
-            <p><strong>Size: </strong><?php echo $sizelats?></p>
-            <h3>Additional Notes</h3>
-            <p><?php echo $notes?></p>
         </div>
     </div>
 </div>
@@ -162,10 +142,11 @@
 ?>
 <!------------------------->
 
+
 <?php
   $conn->close(); // Close database connection
 ?> 
-  <script src="../main.js"></script>  
+  <script src="../mainv1.js"></script>  
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
 </html>
