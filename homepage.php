@@ -20,26 +20,25 @@ include('summary.php');
 </head>
 <body>
 
-
 <header>
-    <img src="../images/logo.png" alt="Mustard Seed Logo" class="logo">
+    <img src="images/logo.png" alt="Mustard Seed Logo" class="logo">
     <nav>
        <ul class="nav-area">
           <li><a href="../homepage.php">Home</a></li>
           <li><a href="#">Homes</a></li>
-          <li><a href="../repairs.php">Repairs<span
-          class = "icon_badge"><?php session_start(); include('summary.php'); echo $_SESSION["totalrepairs"]?></span></a></li>
+          <li><a href="../repairs.php">Repairs(<?php include('summary.php'); echo $_SESSION["totalrepairs"]?>)</a></li>
           <li><a href="#">View Residents</a></li>
-          <i class="far fa-user-circle fa-lg"></i>
-        <a href="#" class="nav-end-link"><?php echo $_SESSION["firstname"]." ".$_SESSION["lastname"]?></a>
+         
+        <li> <i class="far fa-user-circle fa-lg"></i> <a href="#" class="nav-end-link"><?php echo $_SESSION["firstname"]." ".$_SESSION["lastname"]?></a></li>
+        
        </ul>
     </nav>
     <div class = "nav-end">
-        
-        <a href="../logout.php" class="btn-area">Logout</a>
+    <a href="logout.php" class="btn-area">Logout</a>
+       
     </div>
  </header>
-  
+   
 <section>
       <div class="hero-container">
          <div class="wrapper">
@@ -84,14 +83,14 @@ include('summary.php');
          <td><?php echo $totalmalejer?></td>
         </tr>
 
-        <!-- <tr><td><a class = "link" href = "jl/jl.php">Jacob Ladder</a></td>
-        <tr><td><a class = "link" href = "ba/ba.php">Blessed Assurance</a></td> -->
+        <tr><td><a class = "link" href = "jl/jl.php">Jacob Ladder</a></td>
+        <tr><td><a class = "link" href = "ba/ba.php">Blessed Assurance</a></td> 
         </tbody>
     </table>
         
     </div>
     
 </section>
-<script src = "main.js"></script>
+<script src = "homepage.js"></script>
 </body>
 </html>

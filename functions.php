@@ -22,9 +22,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST" & !empty($_POST))
     if($role =='Administrator'){
         $link = 'homepage.php';
         }
-       elseif($role =='Viewer')
+       elseif($role =='Admin')
        {
-        $link = 'mfh/mfh.php';
+        $link = 'admin.php';
         }
 
   if($count == 1) {
@@ -38,6 +38,8 @@ header("Location: ".$link."");
       }else {
   $msgcolor = "danger";
     $message = "Incorrect username or password!";
+    $_SESSION['msgcolor'] = $msgcolor;
+    $_SESSION['message'] = $message;
  }
 }
 

@@ -1,5 +1,9 @@
 <?php 
 include_once('functions.php');
+
+
+$_SESSION['message'] = $message;
+$_SESSION['msgcolor'] = $msgcolor;
 ?>
 
 <!DOCTYPE html>

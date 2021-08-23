@@ -1,13 +1,13 @@
 let productImg = document.getElementById('productImg');
 let smallImg = document.getElementsByClassName("small-img");
 
-smallImg[0].onclick = function () {
-    productImg.src = smallImg[0].src;
-}
+// smallImg[0].onclick = function () {
+//     productImg.src = smallImg[0].src;
+// }
 
-smallImg[1].onclick = function () {
-    productImg.src = smallImg[1].src;
-}
+// smallImg[1].onclick = function () {
+//     productImg.src = smallImg[1].src;
+// }
 // smallImg[2].onclick = function () {
 //     productImg.src = smallImg[2].src;
 // }
@@ -23,6 +23,14 @@ let button = document.getElementById('button').addEventListener('click',()=>{
     icon.classList.toggle('fas fa-minus');
 })
 
+
+const dropmenu = document.getElementsById('caretdown')
+const menu = document.getElementsById('menu');
+dropmenu.addEventListener('click',()=>{
+
+        menu.classList.toggle('show');
+
+})
 
 
 

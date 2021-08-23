@@ -332,6 +332,22 @@ select{
 
 }
 
+.btn_submit
+{
+    background-color:#204B7B;
+    outline: none;
+    border: none;
+    padding: 0;
+    font-size: 20px;
+    border-radius: 30px;
+    display: inline-flex;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    font-size: 16px;
+    height: 60px;
+}
+
 .button_text,.button_icon
 {
  display: inline-flex;
@@ -432,7 +448,7 @@ select{
 .nav-area li{
     display: inline-block;
     padding: 0 15px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 }
 
 .nav-end {
@@ -459,20 +475,20 @@ select{
     text-decoration: none;
 }
 
-.new 
-{
-    width: 50%;
+.nav-area i{
+    color: white;
 }
 
 /* Notification */
 
 li a .icon_badge
 {
-    position: absolute;
+    /* position: absolute; */
     border: 1px solid yellow;
+    border-radius: 45%;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    background-color:yellow;
+    color:#204B7B;
 }
-
-
-
-
-
