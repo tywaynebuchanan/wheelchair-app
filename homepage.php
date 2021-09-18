@@ -25,7 +25,7 @@ include('summary.php');
     <nav>
        <ul class="nav-area">
           <li><a href="../homepage.php">Home</a></li>
-          <li><a href="#">Homes</a></li>
+          <li><a href="#">Apostolates</a></li>
           <li><a href="../repairs.php">Repairs(<?php include('summary.php'); echo $_SESSION["totalrepairs"]?>)</a></li>
           <li><a href="#">View Residents</a></li>
          
@@ -46,11 +46,55 @@ include('summary.php');
       </div>
 </div>
 </section>
+<!-- <section>
+      <div class="hero-container-1">
+         <div class="wrapper">
+         <h1>Total Population</h1>
+      </div>
+</div>
+</section> -->
+
+<section>
+    <div class="container-new">
+       
+        
+        <div class="box">
+        <h3>Total Residents</h3>
+        <i class="fas fa-users"></i>
+        <?php echo  $totalres ?>
+    </div>
+
+
+        <div class="box">
+        <h3>Total Males</h3>
+        <i class="fas fa-male"></i>
+        <?php echo  $total_male_result ?>
+    </div>
+
+
+        <div class="box">
+        <h3>Total Females</h3>
+        <i class="fas fa-female"></i>
+        <?php echo  $total_female_result ?>
+         </div>
+
+         <div class="box">
+        <h3>Total in Wheelchairs</h3>
+        <i class="fas fa-wheelchair"></i>
+        <?php echo  $total_wc_result ?>
+         </div>
+
+</div>
+
+</section>
+
 
 <section class="wrapper">
     <table>
         <thead>
-            <tr><td>Homes</td><td># of Residents</td>
+            <tr>
+                <td>Apostolates</td>
+            <td># of Residents</td>
             <td># of Residents in WheelChair</td>
             <td># of Females</td>
             <td># of Males</td>
@@ -99,6 +143,20 @@ include('summary.php');
     </div>
     
 </section>
+
+
+<footer>
+   <nav>
+         <div class="footer-container">
+         <p>The use of this platform and information contain in such platform is strictly confidential 
+        and is solely for the use of the users within the Mustard Seed Communities. Images and information
+        should not be reproduced or circulated or shared with any other user or parties. If you are not recipient,
+        you may not disclose or use the information/photos on this platform in any way. 
+    </p>
+         </div>
+   </nav>
+</footer>
+
 <script src = "homepage.js"></script>
 </body>
 </html>

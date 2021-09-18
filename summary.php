@@ -88,3 +88,20 @@ $totalresjer = mysqli_query($conn,"SELECT Count(1)FROM tblresidentdata WHERE loc
       $countrow = mysqli_fetch_array($countrepairs);
       $totalrepairs = $countrow[0];
       $_SESSION["totalrepairs"] = $totalrepairs;
+
+      $total_query = mysqli_query($conn,"SELECT Count(*) from tblresidentdata");
+      $totalcount = mysqli_fetch_array($total_query);
+      $totalres = $totalcount[0];
+
+      $total_male =mysqli_query($conn,"SELECT count(*) from tblresidentdata WHERE gender = 'Male'");
+      $total_male_count = mysqli_fetch_array($total_male);
+      $total_male_result = $total_male_count[0];
+
+      $total_female =mysqli_query($conn,"SELECT count(*) from tblresidentdata WHERE gender = 'Female'");
+      $total_female_count = mysqli_fetch_array($total_female);
+      $total_female_result = $total_female_count[0];
+
+      $total_wc = mysqli_query($conn,"SELECT count(*) from tblresidentdata WHERE wheelchairbound = 'Yes'");
+      $total_wc_count = mysqli_fetch_array($total_wc);
+      $total_wc_result = $total_wc_count[0];
+

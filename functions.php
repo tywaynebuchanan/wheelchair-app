@@ -3,6 +3,8 @@ session_start();
 include('dbconn.php');
 $message = '';
 $msgcolor = '';
+$link = '';
+$isActive = '';
 
 if($_SERVER["REQUEST_METHOD"] == "POST" & !empty($_POST))
 {
@@ -11,7 +13,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" & !empty($_POST))
   $password = md5($_POST['password']);
 
   $query = mysqli_query($conn,"SELECT * from tblusers where username = '$username' AND password = '$password'");
-
+ 
   $row = mysqli_fetch_array($query);
   $count = mysqli_num_rows($query);
 
@@ -19,12 +21,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST" & !empty($_POST))
   $role = $row['role'];
   $firstname = $row['firstname'];
   $lastname = $row['lastname'];
-    if($role =='Administrator'){
+  $isActive = $row['isActive'];
+    if($role =='Administrator' && $isActive == 'YES'){
         $link = 'homepage.php';
         }
-       elseif($role =='Admin')
+       elseif($role =='Admin' && $isActive == 'YES')
        {
         $link = 'admin.php';
+        }else{
+          $msgcolor = "danger";
+          $message = "You do not have access to the system";
+          $_SESSION['msgcolor'] = $msgcolor;
+          $_SESSION['message'] = $message;
         }
 
   if($count == 1) {

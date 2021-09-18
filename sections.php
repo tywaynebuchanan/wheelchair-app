@@ -3,7 +3,7 @@
     <nav>
        <ul class="nav-area">
           <li><a href="../homepage.php">Home</a></li>
-          <li><a href="#">Homes</a></li>
+          <li><a href="#">Apostolates</a></li>
           <li><a href="../repairs.php">Repairs(<?php session_start(); include('summary.php'); echo $_SESSION["totalrepairs"]?>)</a></li>
           <li><a href="#">View Residents</a></li>
           <i class="far fa-user-circle fa-lg"></i>

@@ -426,6 +426,15 @@ select{
     padding: 15px;
     color: white;
    border-radius: 10px;
+   
+}
+
+.alert_admin{
+   width: 300px;
+    padding: 15px;
+    color: white;
+   border-radius: 10px;
+   
 }
 
 .closebtn {

@@ -1,8 +1,6 @@
-<?php include('functions.php');
-
+<?php 
+include('functions.php');
 include('dbconn.php');
-
-
 
 ?>
 <!DOCTYPE html>
@@ -19,7 +17,7 @@ include('dbconn.php');
 </head>
 <body>
 <header>
-    <img src="images/logo.png" alt="Mustard Seed Logo" class="logo">
+    <a href = "#"><img src="images/logo.png" alt="Mustard Seed Logo" class="logo"></a>
     <nav>
        <ul class="nav-area">
           <li><a href="../users.php">Users</a></li>
@@ -55,6 +53,8 @@ include('dbconn.php');
      </div>
  </section>
 
+
+ 
  <section class="main">
      <h1>Users</h1>
 
@@ -66,7 +66,7 @@ include('dbconn.php');
                 <td>Last Name</td>
                 <td>Username</td>
                 <td>Role</td>
-                <td colspan="2">Action</td>         
+                <td colspan="3">Action</td>         
             </tr>
     </thead>
             
@@ -82,10 +82,12 @@ if($query->num_rows > 0){
         $lname = $row['lastname'];
         $username = $row['username'];
         $role = $row['role'];
+        $id = $row['id'];
 
         echo '<tr><td><i class="fas fa-user"></i></td><td>'.$firstname.'</td><td>'.$lname.'</td><td>'.$username.'<td>'.$role.'</td>
         <td><a class = "navlink_button" href = "viewresidents.php?name="><i class = "fas fa-lock"></i></a></td>
-        <td><a class = "navlink_button" href ="../edit.php?edit=">Change Role</a></td></tr>';
+        <td><a class = "navlink_button" href ="edituser.php?edit='.$id.'">Role</a></td><td>
+        <a class = "navlink_button" href ="../edit.php?edit=">User</a></td></tr>';
      }
     }else{
          echo "no results";
@@ -104,5 +106,13 @@ if($query->num_rows > 0){
 
 
  </section>
+ <div>
+<?php  if(isset($_SESSION['message'])): ?>
+<div class="alert_admin <?php echo $_SESSION['messagecolor']?>">
+<span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+<?php echo $_SESSION['message'];
+unset($_SESSION['message']);
+ endif;?>
+</div>
 </body>
 </html>

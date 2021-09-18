@@ -88,5 +88,8 @@ if($query->num_rows > 0){
          </div>
    </nav>
 </footer>
+<script src="mainv1.js">
+
+</script>
 </body>
 </html>

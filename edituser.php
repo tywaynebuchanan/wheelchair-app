@@ -1,37 +1,24 @@
 <?php 
 session_start();
 include('dbconn.php');
-if(isset($_POST['approve']))
-{
 
+$id = $_GET['edit'];
 
-  $username = mysqli_escape_string($conn,$_POST['email']);
-  $password = md5($_POST['password']);
-  $role = mysqli_escape_string($conn,$_POST['role']);
-  $firstname = mysqli_escape_string($conn,$_POST['firstname']);
-  $lastname = mysqli_escape_string($conn,$_POST['lastname']);
+$query = mysqli_query($conn,"SELECT * from tblusers WHERE id = '$id'");
 
-  //Query to insert data into database
+if($query->num_rows > 0){
+    while ($row = mysqli_fetch_assoc($query))
+    {
+        $id = $row['id'];
+        $firstname =$row['firstname'];
+        $lastname = $row['lastname'];
+        $password = $row['password'];
+        $role = $row['role'];
+    }
+}
 
-  $query = mysqli_query($conn, "INSERT INTO tblusers (username, password,role,firstname,lastname) 
-  VALUES ('$username', '$password','$role','$firstname','$lastname')"); 
-  if(($query) === TRUE)
-  {
-   
-    $_SESSION['message'] = "User was added to the system";
-    $_SESSION['messagecolor'] = "success";
-    header("location: admin.php");
-   
-
-  }else{
-   
-    $_SESSION['message'] = "Unable to add user to the system";
-    $_SESSION['messagecolor'] = "danger";
-    header("location: admin.php");
-  }
   
-
-}  
+    
 ?>
 
 <!DOCTYPE html>
@@ -86,10 +73,10 @@ if(isset($_POST['approve']))
  </section>
 
  <section class="main">
-     <h1>Add a User</h1>
+     <h1>Edit User<?php echo $firstname."".$lastname?></h1>
 
       <div class="container-fluid">
-      <form action = "adduser.php" method = "post" class="row g-3">
+      <form action = "" method = "post" class="row g-3" onsubmit="return checkblank()">
   <div class="col-md-5">
     <label for="inputEmail4" class="form-label">Email/Username</label>
     <input type="email" name = "email" class="form-control" id="inputEmail4">
@@ -113,25 +100,23 @@ if(isset($_POST['approve']))
   </div>
    <div class="col-md-6">
     <label for="inputCity" class="form-label">First Name </label>
-    <input type="text" name = "firstname" class="form-control" id="inputfirstname">
+    <input type="text" name = "firstname" class="form-control" id="inputfirstname" value = <?php echo $firstname ?>>
   </div>
   <div class="col-md-6">
     <label for="inputCity" class="form-label">Last Name</label>
-    <input type="text" name = "lastname" class="form-control" id="inputlastname">
+    <input type="text" name = "lastname" class="form-control" id="inputlastname" value = <?php echo $lastname?>>
   </div>
   
   <div class="col-12">
-    <button type="submit" class="btn_submit" id="btn" name = "approve">Submit</button>
+    <button type="submit" class="btn_submit" id="btn">Submit</button>
   </div>
    </div>
 
 </form>
 
- </section>
-
-</div>
+      </div>
       <div>
-<?php if(isset($_SESSION['message'])): ?>
+<?php  if(isset($_SESSION['message'])): ?>
 <div class="alert_alert <?php echo $_SESSION['messagecolor']?>">
 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
 <?php echo $_SESSION['message'];
@@ -141,5 +126,9 @@ unset($_SESSION['message']);
      
  </section>
 
+
+<script>
+
+</script>
 </body>
 </html>
