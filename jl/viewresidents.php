@@ -13,9 +13,6 @@
     <title>WheelChair Management System</title>
 </head>
 <body>
-
-  
-  
 </section>
         <?php
             $name = $_GET['name'];

@@ -1,18 +1,6 @@
 <?php
    include_once('../dbconn.php');
    include('../sections.php');
-
-   $name = $_GET['name'];
-           $repair_query = mysqli_query($conn,"SELECT * from tblrepairs WHERE id = '$name'");
-
-           if($repair_query->num_rows > 0){
-            while ($row1 = mysqli_fetch_assoc($repair_query))
-          {
-                $repair1 = $row1['details'];
-          }
-        }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,16 +17,11 @@
 </section>
         <?php
             $name = $_GET['name'];
-
-        //     $res_query = mysqli_query($conn,"SELECT tblbasicinfo.firstname,tblbasicinfo.lastname,tblbasicinfo.dob,
-        //     tblbasicinfo.age,tblbasicinfo.gender
-        //     ,tblimages.image1,tblimages.image2,tblimages.image3,tblimages.image4,tblimages.evalform FROM tblbasicinfo
-        //  JOIN tblimages ON tblbasicinfo.id = tblimages.id
-        //     WHERE tblbasicinfo.id = '$name'");
- 
-           $res_query = mysqli_query($conn,"SELECT tblbasicinfo.firstname,tblbasicinfo.lastname,tblbasicinfo.age,
-           tblbasicinfo.dob,tblbasicinfo.gender,tblbasicinfo.location,tblimages.image1,tblimages.image2,tblimages.image3,tblimages.image4,tblimages.evalform
-           FROM tblbasicinfo JOIN tblimages ON tblbasicinfo.id = tblimages.id WHERE tblbasicinfo.id = '$name'");
+           $res_query = mysqli_query($conn,"SELECT tblresidentdata.firstname,tblresidentdata.lastname,tblresidentdata.location,tblresidentdata.dob,
+           tblresidentdata.age,tblresidentdata.gender
+           ,tblimages.image1,tblimages.image2,tblimages.image3,tblimages.image4,tblimages.evalform FROM tblresidentdata
+        JOIN tblimages ON tblresidentdata.id = tblimages.id
+           WHERE tblresidentdata.id = '$name'");
 
             if($res_query->num_rows > 0){
                 while ($row = mysqli_fetch_assoc($res_query))
@@ -48,33 +31,33 @@
                  $location = $row['location'];
                  $gender = $row['gender'];
                  $age = $row['age'];
-                //  $chair = $row['currentchair'];
-                //  $propel = $row['selfpropel'];
-                //  $resue = $row['resuable'];
-                //  $foothand = $row['foothand'];
-                //  $size = $row['size'];
-                //  $pelvicobliquity = $row['pelvicobliquity'];
-                //  $lowside = $row['lowside'];
-                //  $typeofchair = $row['typeofchair'];
-                //  $backneeded = $row['backneeded'];
-                //  $laterals = $row['laterals'];
-                //  $sizelats = $row['sizelaterals'];
-                //  $shoulder = $row['shoulderwidth'];
+                 $chair = $row['currentchair'];
+                 $propel = $row['selfpropel'];
+                 $resue = $row['resuable'];
+                 $foothand = $row['foothand'];
+                 $size = $row['size'];
+                 $pelvicobliquity = $row['pelvicobliquity'];
+                 $lowside = $row['lowside'];
+                 $typeofchair = $row['typeofchair'];
+                 $backneeded = $row['backneeded'];
+                 $laterals = $row['laterals'];
+                 $sizelats = $row['sizelaterals'];
+                 $shoulder = $row['shoulderwidth'];
                  $image1 = $row['image1'];
                  $image2 = $row['image2'];
+                 $dob = $row['dob'];
+                 $notes = $row['notes'];
+                 $chest = $row['chestwidth'];
+                 $hip = $row['hipwidth'];
+                 $wknee = $row['widthatknee'];
+                 $sth = $row['sth'];
+                 $sta = $row['sta'];
+                 $chestdepth = $row['chestdepth'];
+                 $seatdepth = $row['seatdepth'];
+                 $stfp = $row['stfp'];
                  $image3 = $row['image3'];
                  $image4 = $row['image4'];
                  $evalform = $row['evalform'];
-                 $dob = $row['dob'];
-                //  $notes = $row['notes'];
-                //  $chest = $row['chestwidth'];
-                //  $hip = $row['hipwidth'];
-                //  $wknee = $row['widthatknee'];
-                //  $sth = $row['sth'];
-                //  $sta = $row['sta'];
-                //  $chestdepth = $row['chestdepth'];
-                //  $seatdepth = $row['seatdepth'];
-                //  $stfp = $row['stfp'];
                  
               }
 
@@ -86,37 +69,33 @@
  <!--Single Product Detials-->
  <div class="small-container single-product" id="singleproduct">
      <div class="wrapper">
-     <a class = "navlink_button" href="sp.php"><i class="far fa-arrow-alt-circle-left"></i>Back</a>
+     <a class = "navlink_button" href="sp.php">Back</a>
+    
      </div>
     <div class="row">
-   
-
             <div class="col-2">
-            <button class = "nav_button float-left" id="prev"><i class="far fa-arrow-alt-circle-left"></i>Prev</button>
-                <button class = "nav_button float-right" id="next"><i class="far fa-arrow-alt-circle-right"></i>Next</button>
+                <div class="picture-nav-btn">
+                <button class = "nav_button" id="prev"><i class="far fa-arrow-alt-circle-left"></i>Prev</button>
+                <button class = "nav_button" id="next"><i class="far fa-arrow-alt-circle-right"></i>Next</button>
+                </div>
+            
             <img src=<?php echo $image1 ?> alt="" id="productImg">
-
-            <div class="small-img-row">
+               <div class="small-img-row">
                 <div class="small-img-col">
+              
                     <img src=<?php echo $image1 ?> width= "100%" alt="" class="small-img">
+                  
                 </div>
                 <div class="small-img-col">
                     <img src=<?php echo $image2 ?>  width= "100%" alt="" class="small-img">
                 </div>
                 <div class="small-img-col">
-                    <img src="../images/noimage.jpg"  width= "100%" alt="" class="small-img">
+                    <img src=<?php echo $image3 ?>  width= "100%" alt="" class="small-img">
                 </div>
                 <div class="small-img-col">
-                    <img src="../images/noimage.jpg"  width= "100%" alt="" class="small-img">
+                    <img src=<?php echo $image4 ?> width= "100%" alt="" class="small-img">
                 </div>
             </div>
-
-            <!-- <table class="infotable">
-                            <tbody>
-                                <tr><td>Repair Details </td></tr>
-                                <tr><td><?php echo $repair1 ?></td></tr>
-                               </tbody>
-                           </table> -->
             
         </div>
 
@@ -135,19 +114,14 @@
             <p><strong>Size: </strong><?php echo $size?></p>
             <p><strong>Pelvic Obliquity?: </strong><?php echo $pelvicobliquity ?></p>
             <p><strong> Low Side: </strong><?php echo $lowside?></p>
-
-                     
-            
-            <!-- <p class="cta">WheelChair Measurements</p><div class="icon"><i class="far fa-plus-square"></i></div> -->
-         
-            
             <p><strong>Type of Chair Needed: </strong><?php echo $typeofchair?></p>
             <p><strong>Type of Back Needed: </strong><?php echo $backneeded?></p>
             <p><strong>Laterals: </strong><?php echo $laterals?></p>
             <p><strong>Size: </strong><?php echo $sizelats?></p>
-            <h3>Additional Notes</h3>
+            
             <p><?php echo $notes?></p>
-
+            
+            <h3>Additional Notes</h3>
             <button class="btn" id="button">
                       <span class="button_icon"><i class="fas fa-plus"></i></span><span class="button_text">Show Measurements</span>
                     </button>
@@ -165,8 +139,10 @@
                                 <tr><td>J- Seat to Footplate (L,R): <?php echo $stfp?></td></tr>
                              </tbody>
                            </table>
+                           
         </div>
     </div>
+    
 </div>
 
 
@@ -181,19 +157,7 @@
     </div>
 
 </div>
-
-
-<?php  
-   }else{
-   echo "Unable to fetch data!";
-  }
-?>
-<!------------------------->
-
-<?php
-  $conn->close(); // Close database connection
-?> 
-
+                
 <section class="footer">
     <p>
         The use of this platform and information contain in such platform is strictly confidential 
@@ -202,8 +166,21 @@
         you may not disclose or use the information/photos on this platform in any way. 
     </p>
 
-</section>
+</section>         
+
+<?php  
+   }else{
+   echo "Unable to fetch data!";
+  }
+?>
+
+
+<?php
+  $conn->close(); // Close database connection
+?> 
   <script src="../mainv1.js"></script>  
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
   <script>
     let modal = document.getElementById('modal');
       let openmodal = document.getElementById('openmodal');
@@ -223,6 +200,5 @@
 
 
   </script>
-  
 </body>
 </html>

@@ -1,8 +1,8 @@
 <?php
 // session_start();
    include_once('../dbconn.php');
-   include('../sections.php');
-   include('../session.php');
+ include('../templates/navbar.php');
+  include('../summary.php');
 ?>
 
 <!DOCTYPE html>

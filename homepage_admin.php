@@ -2,6 +2,7 @@
 session_start();
 include ('dbconn.php');
 include('summary.php');
+include('templates/navbar.php');
 
 // Check user login or not
 if(!isset($_SESSION['username'])){
@@ -22,27 +23,7 @@ if(!isset($_SESSION['username'])){
 </head>
 <body>
 
-<header class="header">
-    <a href="#">
-        <img src="images/logo.png" alt="Logo" class="logo">
-    </a>
-    
-    <nav class="main-nav">
-        <ul class="main-nav-list">
-            <li><a class="main-nav-link" href="#howitworks" >Home</a></li>
-            <li><a class="main-nav-link" href="#meals" >Apostolates</a></li>
-            <li><a class="main-nav-link" href="#testimonials" >Repairs<span class="pill"><?php include('summary.php'); echo $_SESSION["totalrepairs"]?></span></a></li>
-            <li><a class="main-nav-link" href="#pricing" >View Residents</a></li>
-            <li><a href="#" class="main-nav-link"><i class="far fa-user-circle fa-lg"></i> <?php echo $_SESSION["firstname"]." ".$_SESSION["lastname"]?></a></li>
-            <li> <a href="logout.php" class="btn-area">Logout</a></li>
-        </ul>
-    </nav>
 
-    <!-- <button class="btn-mobile-nav">
-        <ion-icon class = "icon-mobile-nav" name="menu-outline" id="menu-mobile"></ion-icon>
-        <ion-icon  class = "icon-mobile-nav" name="close-outline" id = "menu-close"></ion-icon>
-    </button> -->
-</header>
    
 <section>
       <div class="hero-container">

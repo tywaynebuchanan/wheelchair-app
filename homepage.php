@@ -23,10 +23,9 @@ if($_SESSION["username"] == true)
     <meta http-equiv="refresh" content = "60">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/f517f78717.js" crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/base-min.css"> -->
+  
     <title>WheelChair Management System- Home Page</title>
 </head>
 <body>
